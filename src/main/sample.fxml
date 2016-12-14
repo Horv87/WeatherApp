@@ -1,0 +1,51 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane fx:controller="main.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <Text text="WeatherApp"
+          GridPane.columnIndex="0"
+          GridPane.rowIndex="0"
+          GridPane.columnSpan="2"/>
+
+    <Label text="City"
+           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <TextField
+            fx:id="city"
+            GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+<fx:define>
+    <ToggleGroup fx:id="degrees"></ToggleGroup>
+</fx:define>
+    <RadioButton fx:id="celsius"
+                 text="Celsius"
+                 selected="true"
+                 toggleGroup="$degrees"
+                 GridPane.columnIndex="0"
+                 GridPane.rowIndex="2"
+                 />
+
+    <RadioButton fx:id="kelvin"
+                 text="Kelvin"
+                 toggleGroup="$degrees"
+                 GridPane.columnIndex="1"
+                 GridPane.rowIndex="2"
+    />
+
+    <RadioButton fx:id="fahrenheit"
+                 text="Fahrenheit"
+                 toggleGroup="$degrees"
+                 GridPane.columnIndex="2"
+                 GridPane.rowIndex="2"
+    />
+    <HBox spacing="10" alignment="bottom_right"
+          GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Button text="Get Weather"
+                onAction="#handleSubmitButtonAction"/>
+    </HBox>
+
+    <Text fx:id="actiontarget"
+
+          GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+</GridPane>
